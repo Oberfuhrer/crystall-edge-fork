@@ -13,7 +13,7 @@
 
 - type: tile
   editorHidden: false
-  id: CEFloorStone
+  id: CEStone
   name: ce-tiles-base
   sprite: /Textures/_CE/Tiles/cave.png
   variants: 14
@@ -33,6 +33,8 @@
   - 1.0
   - 1.0
   baseTurf: Space
+  deconstructTools: [ CEPickaxe ]
+  itemDrop: CEStoneBlock1
   isSubfloor: true
   footstepSounds:
     collection: FootstepAsteroid

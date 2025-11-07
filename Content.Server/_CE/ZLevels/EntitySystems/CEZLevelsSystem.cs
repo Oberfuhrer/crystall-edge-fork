@@ -1,5 +1,4 @@
 using Content.Server.GameTicking;
-using Content.Server.Station.Systems;
 using Content.Shared._CE.ZLevels.EntitySystems;
 using Robust.Server.GameObjects;
 using Robust.Shared.EntitySerialization.Systems;
@@ -9,7 +8,6 @@ namespace Content.Server._CE.ZLevels.EntitySystems;
 public sealed partial class CEZLevelsSystem : CESharedZLevelsSystem
 {
     [Dependency] private readonly MapSystem _map = default!;
-    [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly MetaDataSystem _meta = default!;
@@ -40,11 +38,11 @@ public sealed partial class CEZLevelsSystem : CESharedZLevelsSystem
         {
             if (!_mapLoader.TryLoadMap(path, out var mapEnt, out _))
             {
-                Log.Error($"Failed to load map for Station ZLevelNetwork at depth {depth}!");
+                Log.Error($"Failed to load map for Station zNetwork at depth {depth}!");
                 continue;
             }
 
-            Log.Info($"Created map {mapEnt.Value.Comp.MapId} for CEStationZLevelsSystem at level {depth}");
+            Log.Info($"Created map {mapEnt.Value.Comp.MapId} for Station zNetwork at level {depth}");
             EntityManager.AddComponents(mapEnt.Value, ev.GameMap.ZLevelsComponentOverrides);
             _map.InitializeMap(mapEnt.Value.Comp.MapId);
             //var member = EnsureComp<StationMemberComponent>(mapEnt.Value); todo: station membership
