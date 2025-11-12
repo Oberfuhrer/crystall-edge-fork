@@ -1,12 +1,12 @@
 using System.Numerics;
 using Content.Shared.Chasm;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Throwing;
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
-using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 
 namespace Content.Shared._CE.ZLevels.EntitySystems;
