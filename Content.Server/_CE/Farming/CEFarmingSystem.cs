@@ -14,13 +14,13 @@ public sealed partial class CEFarmingSystem : CESharedFarmingSystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private readonly CEDayCycleSystem _dayCycle = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         InitializeResources();
+        InitializeKudzu();
 
         SubscribeLocalEvent<CEPlantComponent, MapInitEvent>(OnMapInit);
     }
@@ -39,6 +39,9 @@ public sealed partial class CEFarmingSystem : CESharedFarmingSystem
 
         var newTime = _random.NextFloat(plant.Comp.UpdateFrequency);
         plant.Comp.NextUpdateTime = _timing.CurTime + TimeSpan.FromSeconds(newTime);
+
+        if (plant.Comp.RandomGrowthLevel)
+            AffectGrowth(plant, _random.NextFloat(0f, 1f));
     }
 
     public override void Update(float frameTime)

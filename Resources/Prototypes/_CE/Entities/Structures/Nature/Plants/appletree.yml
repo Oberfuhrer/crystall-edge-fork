@@ -3,7 +3,7 @@
   parent:
   - CEPlantTreeBase
   - CEPlantBaseSolarEnergy
-  - CEPlantBaseFloralType
+  - CEPlantBaseFloralWildType
   - CEPlantBaseGrowing4Day
   - CEPlantBaseMetabolizer1Day
   - CEPlantBaseMetabolizerWater
@@ -36,7 +36,6 @@
         visualStateCount: 2
         growthPerUpdate: 0.0833 # After 4 days, we start spamming apples 2 times a day
   - type: CEPlantGatherOnInteract
-    gatherAmount: 0.3
     gatherKeys:
     - apple
     toolWhitelist:
