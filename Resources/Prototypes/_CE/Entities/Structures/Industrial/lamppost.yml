@@ -1,22 +1,22 @@
 - type: entity
-  id: CEWallLightBase
-  name: wall lamp
-  description: A light fixture. Draws power and produces light.
-  abstract: true
+  id: CELamppostBase
   categories: [ ForkFiltered ]
+  name: lamppost
+  abstract: true
+  description: TODO
   placement:
     mode: SnapgridCenter
-    snap:
-    - Wallmount
   components:
+  - type: CEZPhysics
   - type: Transform
     anchored: true
   - type: Clickable
   - type: InteractionOutline
-  #- type: Construction
   - type: Sprite
-    sprite: _CE/Structures/Industrial/wall_lamp.rsi
+    sprite: _CE/Structures/Industrial/lamppost.rsi
+    noRot: true
     drawdepth: Mobs
+    offset: 0,1.2
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -24,12 +24,10 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.4,0.5,0.4,0.35"
-        density: 190
-        mask:
-        - None
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 1000
         layer:
-        - TabletopMachineLayer
+        - WallLayer
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
@@ -59,10 +57,11 @@
       - !type:PlaySoundBehavior
         sound:
           collection: GlassBreak
+  #- type: Construction
   - type: PointLight
     enabled: false
-    radius: 6
-    energy: 1.0
+    radius: 10
+    energy: 1.5
     softness: 0.9
     color: "#f8ab58"
   - type: Appearance
@@ -80,20 +79,42 @@
     sound:
       path: /Audio/Ambience/Objects/light_hum.ogg
   - type: ApcPowerReceiver
-    powerLoad: 0.1
+    powerLoad: 0.2
   - type: ExtensionCableReceiver
     receptionRange: 0
-  - type: PlacementReplacement
-    key: lights
 
 - type: entity
-  parent: CEWallLightBase
-  id: CEWallLight
+  parent: CELamppostBase
+  id: CELamppostSingle
+  suffix: Single
   components:
   - type: Sprite
     layers:
-    - state: base
-    - map: ["enum.PowerDeviceVisualLayers.Powered"]
-      state: glow
+    - state: single
+    - state: light_single
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
       shader: unshaded
-      color: "#f8ab58"
+
+- type: entity
+  parent: CELamppostBase
+  id: CELamppostDouble
+  suffix: Double
+  components:
+  - type: Sprite
+    layers:
+    - state: double
+    - state: light_double
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+      shader: unshaded
+
+- type: entity
+  parent: CELamppostBase
+  id: CELamppostCurve
+  suffix: Curve
+  components:
+  - type: Sprite
+    layers:
+    - state: single_right
+    - state: light_single_right
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+      shader: unshaded
