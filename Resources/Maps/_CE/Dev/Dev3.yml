@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/07/2025 17:55:02
-  entityCount: 16
+  time: 12/10/2025 10:47:23
+  entityCount: 17
 maps:
 - 1
 grids:
@@ -110,6 +110,14 @@ entities:
     - type: Transform
       gridTraversal: False
       pos: -0.14840114,-4.295363
+      parent: 1
+    - type: ViewSubscriber
+  - uid: 9
+    components:
+    - type: MetaData
+    - type: Transform
+      gridTraversal: False
+      pos: -5.1592636,3.297735
       parent: 1
     - type: ViewSubscriber
 - proto: CEPipeBrassMedium

@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 12/07/2025 17:55:01
-  entityCount: 969
+  time: 12/10/2025 10:47:23
+  entityCount: 980
 maps:
 - 1
 grids:
@@ -122,6 +122,14 @@ entities:
       fibers: []
       fingerprints: []
     - type: RadiationGridResistance
+  - uid: 24
+    components:
+    - type: MetaData
+    - type: Transform
+      gridTraversal: False
+      pos: -5.1592636,3.297735
+      parent: 1
+    - type: ViewSubscriber
   - uid: 83
     components:
     - type: MetaData
@@ -2953,6 +2961,14 @@ entities:
       rot: 3.141592653589793 rad
       pos: -7.5,-8.5
       parent: 1
+- proto: CEKeyTavernDorm1
+  entities:
+  - uid: 901
+    components:
+    - type: Transform
+      parent: 897
+    - type: Physics
+      canCollide: False
 - proto: CELamppostCurve
   entities:
   - uid: 34
@@ -3803,17 +3819,15 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: CEPipeBrassMediumVerticalDown
+- proto: CEPipeBrassMediumVerticalUp
   entities:
-  - uid: 602
+  - uid: 23
     components:
     - type: Transform
       pos: -4.5,4.5
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: CEPipeBrassMediumVerticalUp
-  entities:
   - uid: 382
     components:
     - type: Transform
@@ -4003,6 +4017,35 @@ entities:
       parent: 1
 - proto: CETableWoodenCounter
   entities:
+  - uid: 263
+    components:
+    - type: Transform
+      pos: -5.5,5.5
+      parent: 1
+  - uid: 273
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -7.5,-3.5
+      parent: 1
+  - uid: 279
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -8.5,-3.5
+      parent: 1
+  - uid: 305
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,-2.5
+      parent: 1
+  - uid: 315
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,-1.5
+      parent: 1
   - uid: 348
     components:
     - type: Transform
@@ -4068,8 +4111,33 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -7.5,2.5
       parent: 1
+  - uid: 902
+    components:
+    - type: Transform
+      pos: -4.5,5.5
+      parent: 1
 - proto: CETableWoodenMetallicCounter
   entities:
+  - uid: 53
+    components:
+    - type: Transform
+      pos: 3.5,-5.5
+      parent: 1
+  - uid: 67
+    components:
+    - type: Transform
+      pos: 3.5,-6.5
+      parent: 1
+  - uid: 86
+    components:
+    - type: Transform
+      pos: 7.5,-9.5
+      parent: 1
+  - uid: 220
+    components:
+    - type: Transform
+      pos: 7.5,-8.5
+      parent: 1
   - uid: 533
     components:
     - type: Transform
@@ -4115,6 +4183,112 @@ entities:
     components:
     - type: Transform
       pos: -1.5,-11.5
+      parent: 1
+  - uid: 941
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,-8.5
+      parent: 1
+  - uid: 942
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -2.5,-8.5
+      parent: 1
+  - uid: 944
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -6.5,-12.5
+      parent: 1
+  - uid: 945
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -7.5,-12.5
+      parent: 1
+- proto: CEThinWindowIron
+  entities:
+  - uid: 26
+    components:
+    - type: Transform
+      pos: -4.5,5.5
+      parent: 1
+  - uid: 30
+    components:
+    - type: Transform
+      pos: -5.5,5.5
+      parent: 1
+  - uid: 31
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -8.5,-3.5
+      parent: 1
+  - uid: 37
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -7.5,-3.5
+      parent: 1
+  - uid: 38
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -2.5,-2.5
+      parent: 1
+  - uid: 52
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -2.5,-1.5
+      parent: 1
+  - uid: 94
+    components:
+    - type: Transform
+      pos: -1.5,-8.5
+      parent: 1
+  - uid: 163
+    components:
+    - type: Transform
+      pos: -2.5,-8.5
+      parent: 1
+  - uid: 200
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -7.5,-12.5
+      parent: 1
+  - uid: 213
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -6.5,-12.5
+      parent: 1
+  - uid: 916
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 3.5,-5.5
+      parent: 1
+  - uid: 925
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 3.5,-6.5
+      parent: 1
+  - uid: 926
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 7.5,-8.5
+      parent: 1
+  - uid: 937
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 7.5,-9.5
       parent: 1
 - proto: CETradeContractApothecariesGuild
   entities:
@@ -4603,27 +4777,11 @@ entities:
       parent: 1
 - proto: CEWallLight
   entities:
-  - uid: 23
-    components:
-    - type: Transform
-      pos: 7.5,1.5
-      parent: 1
-  - uid: 24
-    components:
-    - type: Transform
-      pos: 16.5,1.5
-      parent: 1
   - uid: 25
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: 16.5,0.5
-      parent: 1
-  - uid: 26
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 7.5,0.5
+      pos: -3.5,-2.5
       parent: 1
   - uid: 64
     components:
@@ -4640,12 +4798,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -8.5,-2.5
-      parent: 1
-  - uid: 67
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -3.5,-2.5
       parent: 1
   - uid: 68
     components:
@@ -4713,18 +4865,6 @@ entities:
     - type: Transform
       pos: -4.5,-9.5
       parent: 1
-  - uid: 315
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -11.5,14.5
-      parent: 1
-  - uid: 316
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -9.5,14.5
-      parent: 1
   - uid: 415
     components:
     - type: Transform
@@ -4748,6 +4888,27 @@ entities:
       rot: 3.141592653589793 rad
       pos: -20.5,3.5
       parent: 1
+- proto: CEWallmountKeyRack
+  entities:
+  - uid: 897
+    components:
+    - type: Transform
+      pos: -3.5,-1.5
+      parent: 1
+    - type: Storage
+      storedItems:
+        901:
+          position: 0,0
+          _rotation: South
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          showEnts: False
+          occludes: True
+          ents:
+          - 901
+    - type: Fixtures
+      fixtures: {}
 - proto: CEWallStoneBrickOld
   entities:
   - uid: 81
@@ -5005,11 +5166,6 @@ entities:
     - type: Transform
       pos: -11.5,16.5
       parent: 1
-  - uid: 305
-    components:
-    - type: Transform
-      pos: -10.5,16.5
-      parent: 1
   - uid: 306
     components:
     - type: Transform
@@ -5167,16 +5323,6 @@ entities:
     - type: Transform
       pos: -6.5,5.5
       parent: 1
-  - uid: 52
-    components:
-    - type: Transform
-      pos: -5.5,5.5
-      parent: 1
-  - uid: 53
-    components:
-    - type: Transform
-      pos: -4.5,5.5
-      parent: 1
   - uid: 54
     components:
     - type: Transform
@@ -5320,68 +5466,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -19.013912,-4.37801
       parent: 1
-- proto: CEWindowStone
-  entities:
-  - uid: 30
-    components:
-    - type: Transform
-      pos: -2.5,-1.5
-      parent: 1
-  - uid: 31
-    components:
-    - type: Transform
-      pos: -2.5,-2.5
-      parent: 1
-  - uid: 37
-    components:
-    - type: Transform
-      pos: -7.5,-3.5
-      parent: 1
-  - uid: 38
-    components:
-    - type: Transform
-      pos: -8.5,-3.5
-      parent: 1
-  - uid: 86
-    components:
-    - type: Transform
-      pos: 7.5,-8.5
-      parent: 1
-  - uid: 94
-    components:
-    - type: Transform
-      pos: 7.5,-9.5
-      parent: 1
-  - uid: 200
-    components:
-    - type: Transform
-      pos: 3.5,-6.5
-      parent: 1
-  - uid: 213
-    components:
-    - type: Transform
-      pos: -6.5,-12.5
-      parent: 1
-  - uid: 220
-    components:
-    - type: Transform
-      pos: -7.5,-12.5
-      parent: 1
-  - uid: 263
-    components:
-    - type: Transform
-      pos: -1.5,-8.5
-      parent: 1
-  - uid: 273
-    components:
-    - type: Transform
-      pos: -2.5,-8.5
-      parent: 1
-  - uid: 279
-    components:
-    - type: Transform
-      pos: 3.5,-5.5
-      parent: 1
 - proto: CEWoodenBed
   entities:
   - uid: 578
@@ -5405,6 +5489,22 @@ entities:
     components:
     - type: Transform
       pos: -0.5,-0.5
+      parent: 1
+- proto: CEWoodenDoorTavernHall
+  entities:
+  - uid: 316
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -4.5,-3.5
+      parent: 1
+- proto: CEWoodenDoorTavernHallMirrored
+  entities:
+  - uid: 602
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -5.5,-3.5
       parent: 1
 - proto: CEWoodenDoorWindowed
   entities:
@@ -5465,12 +5565,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -11.5,17.5
-      parent: 1
-  - uid: 163
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -10.5,17.5
       parent: 1
   - uid: 164
     components:
