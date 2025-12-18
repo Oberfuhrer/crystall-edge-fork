@@ -48,3 +48,11 @@
   id: 1005
   time: '2025-12-17T22:35:45.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-edge/pull/139
+- author: TheShuEd
+  changes:
+  - message: "Added trading faction Alcohol Company \u201CRed Heather\u201D. You can\
+      \ buy various alcoholic bottles there!"
+    type: Add
+  id: 1006
+  time: '2025-12-18T11:09:50.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-edge/pull/141
