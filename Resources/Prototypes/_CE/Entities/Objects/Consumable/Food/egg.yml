@@ -105,7 +105,7 @@
   - type: CETemperatureTransformation
     entries:
     - temperatureRange: 400, 500
-      transformTo: CEFoodEgg
+      transformTo: CEFoodEggCooked
 
 - type: entity
   id: CEFoodEggCooked
@@ -113,6 +113,7 @@
   name: cooked egg
   components:
   - type: Edible
+    trash: []
   - type: SolutionContainerManager
     solutions:
       food:
