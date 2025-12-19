@@ -245,7 +245,10 @@
     - Adrenaline
   - type: Blindable
   - type: Bloodstream
-    bloodReagent: CEBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: CEBlood
+        Quantity: 1
   - type: FireVisuals
     sprite: _CE/Mobs/Effects/onfire.rsi
     normalState: Small_burning

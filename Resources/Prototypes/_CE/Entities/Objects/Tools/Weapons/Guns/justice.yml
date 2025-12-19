@@ -29,10 +29,10 @@
   - type: MagazineVisuals
     magState: mag
     steps: 4
-  - type: HitscanBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: CEJusticeHitscan
     fireCost: 5
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 40
     startingCharge: 40
   - type: Gun

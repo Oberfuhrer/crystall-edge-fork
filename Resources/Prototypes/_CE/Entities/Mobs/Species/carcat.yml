@@ -90,7 +90,10 @@
 #  - type: CEAuraImprint
 #    imprintColor: "#9e7e5d"
   - type: Bloodstream
-    bloodReagent: CEBloodCarcat
+    bloodReagents:
+      reagents:
+      - ReagentId: CEBloodCarcat
+        Quantity: 1
   - type: Inventory
     templateId: CECarcat # Cant wear shoes
     speciesId: carcat

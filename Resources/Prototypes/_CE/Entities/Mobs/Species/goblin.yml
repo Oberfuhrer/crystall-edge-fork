@@ -83,7 +83,10 @@
     prototype: CEHuman
     requiredLegs: 2
   - type: Bloodstream
-    bloodReagent: CEBloodGoblin
+    bloodReagents:
+      reagents:
+      - ReagentId: CEBloodGoblin
+        Quantity: 1
   - type: Fixtures
     fixtures: # Smaller hitbox & less weight
       fix1:

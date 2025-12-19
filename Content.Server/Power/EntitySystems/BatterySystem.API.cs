@@ -1,9 +1,15 @@
 using Content.Shared._CE.MagicEnergy.Systems;
 using Content.Shared.Power;
 using Content.Shared.Power.Components;
+using Content.Shared.Power.EntitySystems;
 
 namespace Content.Server.Power.EntitySystems;
 
+/// <summary>
+/// Responsible for <see cref="BatteryComponent"/>.
+/// Unpredicted equivalent of <see cref="PredictedBatterySystem"/>.
+/// If you make changes to this make sure to keep the two consistent.
+/// </summary>
 public sealed partial class BatterySystem
 {
     public override float ChangeCharge(Entity<BatteryComponent?> ent, float amount)
@@ -29,6 +35,10 @@ public sealed partial class BatterySystem
 
         var newValue = Math.Clamp(ent.Comp.CurrentCharge + amount, 0, ent.Comp.MaxCharge);
         var delta = newValue - ent.Comp.CurrentCharge;
+
+        if (delta == 0f)
+            return delta;
+
         ent.Comp.CurrentCharge = newValue;
 
         TrySetChargeCooldown(ent.Owner);
@@ -40,8 +50,8 @@ public sealed partial class BatterySystem
 
     public override float UseCharge(Entity<BatteryComponent?> ent, float amount)
     {
-        if (amount <= 0 || !Resolve(ent, ref ent.Comp) || ent.Comp.CurrentCharge == 0)
-            return 0;
+        if (amount <= 0f || !Resolve(ent, ref ent.Comp) || ent.Comp.CurrentCharge == 0)
+            return 0f;
 
         return ChangeCharge(ent, -amount);
     }
@@ -84,6 +94,45 @@ public sealed partial class BatterySystem
 
         var ev = new ChargeChangedEvent(ent.Comp.CurrentCharge, ent.Comp.MaxCharge);
         RaiseLocalEvent(ent, ref ev);
+    }
+
+    /// <summary>
+    /// Gets the battery's current charge.
+    /// </summary>
+    public float GetCharge(Entity<BatteryComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp, false))
+            return 0f;
+
+        return ent.Comp.CurrentCharge;
+    }
+
+    /// <summary>
+    /// Gets number of remaining uses for the given charge cost.
+    /// </summary>
+    public int GetRemainingUses(Entity<BatteryComponent?> ent, float cost)
+    {
+        if (cost <= 0)
+            return 0;
+
+        if (!Resolve(ent, ref ent.Comp))
+            return 0;
+
+        return (int)(ent.Comp.CurrentCharge / cost);
+    }
+
+    /// <summary>
+    /// Gets number of maximum uses at full charge for the given charge cost.
+    /// </summary>
+    public int GetMaxUses(Entity<BatteryComponent?> ent, float cost)
+    {
+        if (cost <= 0)
+            return 0;
+
+        if (!Resolve(ent, ref ent.Comp))
+            return 0;
+
+        return (int)(ent.Comp.MaxCharge / cost);
     }
 
     public override void TrySetChargeCooldown(Entity<BatterySelfRechargerComponent?> ent)

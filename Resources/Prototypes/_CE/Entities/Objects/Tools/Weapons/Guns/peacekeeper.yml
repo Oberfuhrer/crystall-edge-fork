@@ -26,10 +26,10 @@
     size: Ginormous
     shape:
     - 0, 0, 4, 1 # 2x5
-  - type: HitscanBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: CEPeaceKeeperHitscan
     fireCost: 10
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 50
     startingCharge: 50
   - type: Gun
