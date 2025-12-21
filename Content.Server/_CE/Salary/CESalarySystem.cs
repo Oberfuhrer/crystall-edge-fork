@@ -1,4 +1,5 @@
 using Content.Server._CE.Currency;
+using Content.Server.Power.EntitySystems;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
@@ -88,6 +89,9 @@ public sealed partial class CESalarySystem : EntitySystem
 
     private void OnInteract(Entity<CESalaryPayrollComponent> ent, ref InteractHandEvent args)
     {
+        if (!this.IsPowered(ent.Owner, EntityManager))
+            return;
+
         if (!TryComp<CESalaryCounterComponent>(args.User, out var counter))
         {
             _popup.PopupEntity(Loc.GetString("ce-salary-payroll-examine-unsupported-job"), args.User, args.User);

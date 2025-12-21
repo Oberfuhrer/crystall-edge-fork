@@ -1,7 +1,6 @@
 using System.Linq;
-using Content.Server._CE.Power.Components;
-using Content.Server.Audio;
 using Content.Server.Power.EntitySystems;
+using Content.Shared._CE.Power.Components;
 using Content.Shared.Placeable;
 using Content.Shared.Power;
 
@@ -9,9 +8,6 @@ namespace Content.Server._CE.Power;
 
 public sealed partial class CEPowerSystem
 {
-    [Dependency] private readonly AmbientSoundSystem _ambient = default!;
-    [Dependency] private readonly BatterySystem _battery = default!;
-
     private void InitializeCharger()
     {
         SubscribeLocalEvent<CEChargingPlatformComponent, PowerChangedEvent>(OnChargerChange);
@@ -20,8 +16,8 @@ public sealed partial class CEPowerSystem
     private void OnChargerChange(Entity<CEChargingPlatformComponent> ent, ref PowerChangedEvent args)
     {
         var enabled = args.Powered;
-        _ambient.SetAmbience(ent, enabled);
-        _pointLight.SetEnabled(ent, enabled);
+        Ambient.SetAmbience(ent, enabled);
+        PointLight.SetEnabled(ent, enabled);
     }
 
     private void UpdateChargers(float frameTime)
@@ -31,21 +27,21 @@ public sealed partial class CEPowerSystem
         var query = EntityQueryEnumerator<CEChargingPlatformComponent, ItemPlacerComponent>();
         while (query.MoveNext(out var uid, out var charger, out var itemPlacer))
         {
-            if (_timing.CurTime < charger.NextCharge)
+            if (Timing.CurTime < charger.NextCharge)
                 continue;
 
             if (!this.IsPowered(uid, EntityManager))
                 continue;
 
-            charger.NextCharge = _timing.CurTime + charger.Frequency;
+            charger.NextCharge = Timing.CurTime + charger.Frequency;
 
             if (!itemPlacer.PlacedEntities.Any())
                 continue;
 
             foreach (var placed in itemPlacer.PlacedEntities)
             {
-                if (_batteryQuery.TryComp(placed, out var battery))
-                    _battery.ChangeCharge((placed, battery), charger.Charge / itemPlacer.PlacedEntities.Count);
+                if (BatteryQuery.TryComp(placed, out var battery))
+                    Battery.ChangeCharge((placed, battery), charger.Charge / itemPlacer.PlacedEntities.Count);
             }
         }
     }

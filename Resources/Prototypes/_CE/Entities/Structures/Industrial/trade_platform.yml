@@ -1,6 +1,7 @@
 - type: entity
   parent:
-  - BaseStructure
+  - BaseMachine
+  - CEBaseMachinePowered
   id: CETradingPlatform
   name: buying platform
   description: Allows you to trade with the outside world, through retail trade transactions.
@@ -53,7 +54,9 @@
     receptionRange: 0
 
 - type: entity
-  parent: BaseStructure
+  parent:
+  - BaseMachine
+  - CEBaseMachinePowered
   id: CETradingSellingPlatform
   name: selling platform
   description: Allows you to sell any items and structures to the outside world. Fill the platform completely with mana to sell whatever you place on it.
@@ -97,16 +100,8 @@
         - MidImpassable
         - LowImpassable
         hard: false
-  - type: Battery
-    maxCharge: 10
-    startingCharge: 10
-  - type: BatteryCharger
-    voltage: Apc
-    node: input
-  - type: PowerNetworkBattery
-    maxSupply: 0
-    supplyRampTolerance: 1
-    maxChargeRate: 2
+  - type: ApcPowerReceiver
+    powerLoad: 0.1
   - type: NodeContainer
     examinable: true
     nodes:
@@ -115,7 +110,9 @@
         nodeGroupID: Apc
 
 - type: entity
-  parent: BaseStructure
+  parent:
+  - BaseMachine
+  - CEBaseMachinePowered
   id: CESalaryPlatform
   name: salary platform
   description: Allows you to quickly receive the salary you are entitled to (if, of course, you are supposed to receive a salary from the empire)
@@ -152,6 +149,8 @@
         - MidImpassable
         - LowImpassable
         hard: false
+  - type: ApcPowerReceiver
+    powerLoad: 0.1
 
 - type: entity
   id: CECashImpact
