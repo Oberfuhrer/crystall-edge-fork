@@ -148,3 +148,22 @@
   id: 1016
   time: '2025-12-21T11:12:01.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-edge/pull/154
+- author: TheShuEd
+  changes:
+  - message: 'Shaar: The chiefs'' rooms now have spare keys to the entire building.'
+    type: Add
+  - message: 'Shaar: More details and secrets around map.'
+    type: Add
+  - message: 'Shaar: Redesign Tavern roof.'
+    type: Add
+  - message: Added ability to build dirt walls
+    type: Add
+  - message: You can anchor conveyours under drill and recyclers now!
+    type: Fix
+  - message: large brick stone walls are now destructible.
+    type: Fix
+  - message: Drills now can break iron doors.
+    type: Fix
+  id: 1017
+  time: '2025-12-21T12:37:46.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-edge/pull/155
