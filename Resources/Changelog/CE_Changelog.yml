@@ -194,3 +194,12 @@
   id: 1019
   time: '2025-12-21T17:52:57.0000000+00:00'
   url: https://github.com/crystallpunk-14/crystall-edge/pull/171
+- author: TheShuEd
+  changes:
+  - message: Added a Funnel - simple machine that automatically inserts items into
+      a nearby grid-inv attached to the floor on the adjacent tile. Can also eject
+      item from containers if has active conveyor underneath.
+    type: Add
+  id: 1020
+  time: '2025-12-22T22:07:30.0000000+00:00'
+  url: https://github.com/crystallpunk-14/crystall-edge/pull/172
