@@ -207,6 +207,7 @@
   - MobFlammable
   - CEMobStarving
   - CEBaseMobSpecies
+  - MobRespirator
   id: CEBaseMobSpeciesOrganic
   save: false
   abstract: true
