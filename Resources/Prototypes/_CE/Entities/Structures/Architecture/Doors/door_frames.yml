@@ -6,6 +6,8 @@
   components:
   - type: InteractionOutline
   - type: Physics
+  - type: Anchorable
+    delay: 2
   - type: Fixtures
     fixtures:
       fix1:
@@ -44,9 +46,9 @@
             max: 2
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  #- type: Construction
-  #  graph: CEWoodenDoor
-  #  node: CEWoodenDoorFrame
+  - type: Construction
+    graph: CEWoodenDoor
+    node: CEWoodenDoorFrame
 
 - type: entity
   parent: CEWoodenDoorFrame
@@ -54,9 +56,9 @@
   components:
   - type: Sprite
     state: closed_mirrored
-  #- type: Construction
-  #  graph: CEWoodenDoor
-  #  node: CEWoodenDoorFrameMirrored
+  - type: Construction
+    graph: CEWoodenDoor
+    node: CEWoodenDoorFrameMirrored
 
 - type: entity
   parent: CEBaseDoorFrame
@@ -84,9 +86,9 @@
             max: 2
       - !type:DoActsBehavior
         acts: ["Destruction"]
-  #- type: Construction
-  #  graph: CEIronDoor
-  #  node: CEIronDoorFrame
+  - type: Construction
+    graph: CEIronDoor
+    node: CEIronDoorFrame
 
 - type: entity
   parent: CEIronDoorFrame
@@ -94,7 +96,7 @@
   components:
   - type: Sprite
     state: closed_mirrored
-  #- type: Construction
-  #  graph: CEIronDoor
-  #  node: CEIronDoorFrameMirrored
+  - type: Construction
+    graph: CEIronDoor
+    node: CEIronDoorFrameMirrored
 
